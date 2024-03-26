@@ -1,0 +1,16 @@
+{
+  "name": "youtube_clone_project",
+  "version": "1.0.0",
+  "description": "Clone of youtube by chai or code",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "dakshil gorasiya",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
+  }
+}
