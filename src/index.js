@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import connctDB from "./config/db.js";
+import connctDB from "./db/index.js";
 dotenv.config({ path: "./env" });
 
 connctDB();
