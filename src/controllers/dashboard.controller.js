@@ -12,6 +12,13 @@ const getChannelStats = asyncHandler(async (req, res) => {
 
 const getChannelVideos = asyncHandler(async (req, res) => {
   // TODO: get all the videos uploaded by a channel
+  const video = await Video.find({ owner: req.user.id });
+  if (!video) {
+    throw new ApiError(404, "No videos found");
+  }
+  return res
+    .status(200)
+    .json(new ApiResponse(200, video, "Videos found successfully"));
 });
 
 export { getChannelStats, getChannelVideos };
