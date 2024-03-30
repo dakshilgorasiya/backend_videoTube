@@ -75,6 +75,13 @@ const getVideoById = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Video not found");
   }
 
+  if (
+    video.isPublished === false &&
+    video.owner.toString() !== req.user._id.toString()
+  ) {
+    throw new ApiError(403, "You are not authorized to view this video");
+  }
+
   video.views = Number(video.views) + 1;
   await video.save();
 
